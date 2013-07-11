@@ -47,3 +47,4 @@ end
 gem 'twitter-bootstrap-rails'
 gem 'devise', '3.0.0.rc'
 gem 'simple-navigation'
+gem 'bootstrap_forms'
