@@ -14,12 +14,13 @@
     </div>
     <div class="span2">
       <div class="well" style="padding: 8px 0;">
-        <ul class="nav nav-list">
-          <li class="nav-header">Account</li>
-          <li><a href="#">Settings</a></li>
-          <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
-          <li class="divider"></li>
-        </ul>
+        <%= render_navigation :expand_all => true %>
+        <!--<ul class="nav nav-list">-->
+          <!--<li class="nav-header">Account</li>-->
+          <!--<li><a href="#">Settings</a></li>-->
+          <!--<li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>-->
+          <!--<li class="divider"></li>-->
+        <!--</ul>-->
       </div>
     </div>
   </div>
