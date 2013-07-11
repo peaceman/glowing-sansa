@@ -1,5 +1,9 @@
 LodgeManager::Application.routes.draw do
-  devise_for :admins, :controllers => { :sessions => 'sessions' }
+  devise_for :admins, :skip => [:registrations], :controllers => { :sessions => 'sessions' }
+  as :admin do
+    get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+  end
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

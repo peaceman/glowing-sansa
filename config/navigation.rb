@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.dom_class = 'nav nav-list'
     primary.item :account, 'Account', nil, :class => 'nav-header'
+    primary.item :account_settings, 'Settings', edit_admin_registration_path
     primary.item :logout, 'Logout', destroy_admin_session_path, :method => :delete
     #primary.item :key_1, 'name', url, options
 
