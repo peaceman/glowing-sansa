@@ -1,7 +1,15 @@
 <div class="page-header">
   <h2>New Lodge</h2>
 </div>
-<%= bootstrap_form_for(@lodge) do |f| %>
+<ul class="nav nav-tabs">
+  <li>
+    <%= link_to 'Listing', lodges_path %>
+  </li>
+  <li class="active">
+    <%= link_to 'New', new_lodge_path %>
+  </li>
+</ul>
+<%= bootstrap_form_for(@lodge, :html => {:class => 'form-horizontal'}) do |f| %>
     <%= f.text_field :name %>
     <%= f.text_area :description %>
     <%= f.check_box String(:published) %>
