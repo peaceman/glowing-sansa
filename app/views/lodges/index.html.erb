@@ -16,8 +16,8 @@
   <tbody>
   <% @lodges.each do |lodge| %>
   <tr>
-    <td><%= lodge.id %></td>
-    <td><%= lodge.name %></td>
+    <td><%= link_to lodge.id, lodge_path(lodge) %></td>
+    <td><%= link_to lodge.name, lodge_path(lodge) %></td>
     <td><%= lodge.published %></td>
     <td><%= lodge.created_at %></td>
     <td><%= lodge.updated_at %></td>
