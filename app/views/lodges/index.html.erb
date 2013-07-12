@@ -1,2 +1,30 @@
-<h1>LodgesController#index</h1>
-<p>Find me in app/views/lodges_controller/index.html.erb</p>
+<div class="page-header">
+  <h2>Lodges Listing</h2>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= '#' %></th>
+    <th><%= 'Name' %></th>
+    <th><%= 'Published' %></th>
+    <th><%= 'Created at' %></th>
+    <th><%= 'Updated at' %></th>
+    <th><%= 'Actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @lodges.each do |lodge| %>
+  <tr>
+    <td><%= lodge.id %></td>
+    <td><%= lodge.name %></td>
+    <td><%= lodge.published %></td>
+    <td><%= lodge.created_at %></td>
+    <td><%= lodge.updated_at %></td>
+    <td>
+      <%= link_to 'Edit', edit_lodge_path(lodge), :class => 'btn btn-mini' %>
+      <%= link_to 'Destroy', lodge_path(lodge), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
