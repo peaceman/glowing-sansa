@@ -8,4 +8,10 @@
   <li <%= active == :show ? 'class=active' : 'class=disabled' %>>
     <a href="">Details</a>
   </li>
+  <li <%= active == :export ? 'class=active' : 'class=disabled' %>>
+    <a href="">Export</a>
+  </li>
+  <li <%= active == :import ? 'class=active' : 'class=disabled' %>>
+    <a href="">Import</a>
+  </li>
 </ul>
