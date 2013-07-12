@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h2>New Lodge</h2>
+</div>
+<%= bootstrap_form_for(@lodge) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_area :description %>
+    <%= f.check_box String(:published) %>
+    <%= f.actions %>
+<% end %>
