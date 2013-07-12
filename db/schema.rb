@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130711195230) do
+ActiveRecord::Schema.define(version: 20130712200745) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20130711195230) do
   create_table "lodges", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
