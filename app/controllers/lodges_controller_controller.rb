@@ -2,15 +2,21 @@ class LodgesControllerController < ApplicationController
   def index
   end
 
-  def show
+  def create
+  end
+
+  def new
   end
 
   def edit
   end
 
+  def show
+  end
+
   def update
   end
 
-  def delete
+  def destroy
   end
 end
