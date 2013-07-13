@@ -7,6 +7,8 @@
   <dd><%= @lodge.name %></dd>
   <dt><%= 'Description' %></dt>
   <dd><%= @lodge.description %></dd>
+  <dt>Image</dt>
+  <dd><%= link_to image_tag(@lodge.image.thumb.url), @lodge.image.url if @lodge.image? %></dd>
   <dt><%= 'Created at' %></dt>
   <dd><%= @lodge.created_at %></dd>
   <dt><%= 'Updated at' %></dt>
