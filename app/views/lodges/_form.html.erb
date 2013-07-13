@@ -1,0 +1,8 @@
+<%= bootstrap_form_for(@lodge, :html => {:class => 'form-horizontal'}) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_area :description %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.check_box String(:published) %>
+    <%= f.actions %>
+<% end %>
