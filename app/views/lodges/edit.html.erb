@@ -1,2 +1,5 @@
-<h1>LodgesController#edit</h1>
-<p>Find me in app/views/lodges_controller/edit.html.erb</p>
+<div class="page-header">
+  <h2>Edit Lodge: <%= @lodge.name %></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {active: false} %>
+<%= render partial: 'form' %>

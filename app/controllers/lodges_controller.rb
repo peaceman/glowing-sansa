@@ -14,6 +14,7 @@ class LodgesController < ApplicationController
   end
 
   def edit
+    @lodge = Lodge.find(params[:id])
   end
 
   def show
@@ -21,6 +22,9 @@ class LodgesController < ApplicationController
   end
 
   def update
+    @lodge = Lodge.find(params[:id])
+    @lodge.update(post_params)
+    redirect_to @lodge
   end
 
   def destroy
