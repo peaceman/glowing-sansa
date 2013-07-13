@@ -28,6 +28,9 @@ class LodgesController < ApplicationController
   end
 
   def destroy
+    @lodge = Lodge.find(params[:id])
+    @lodge.destroy
+    redirect_to lodges_path
   end
 
   private
