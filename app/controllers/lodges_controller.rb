@@ -5,8 +5,11 @@ class LodgesController < ApplicationController
 
   def create
     @lodge = Lodge.new(post_params)
-    @lodge.save
-    redirect_to @lodge
+    if @lodge.save
+      redirect_to @lodge
+    else
+      render 'new'
+    end
   end
 
   def new
