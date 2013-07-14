@@ -3,4 +3,5 @@ class Lodge < ActiveRecord::Base
 
   validates :name, presence: true, length: {minimum: 4}
   validates :description, presence: true
+  validates :street, :city, :country, presence: true
 end
