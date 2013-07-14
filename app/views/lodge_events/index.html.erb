@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h2>Events Listing of Lodge: <%= @lodge.name %></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :index} %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= '#' %></th>
+    <th><%= 'Name' %></th>
+    <th><%= 'Created at' %></th>
+    <th><%= 'Updated at' %></th>
+    <th><%= 'Actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% @lodge_events.each do |lodge_event| %>
+    <td><%= link_to lodge_event.id, lodge_event %></td>
+    <td><%= link_to lodge_event.name, lodge_event %></td>
+    <td><%= lodge_event.created_at %></td>
+    <td><%= lodge_event.updated_at %></td>
+    <td>
+      <%= link_to 'Edit', edit_lodge_lodge_event_path(lodge_event), :class => 'btn btn-mini' %>
+      <%= link_to 'Destroy', lodge_event, :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+    </td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>
+<%= paginate @lodge_events, :theme => 'twitter-bootstrap', :pagination_class => 'pagination-right' %>

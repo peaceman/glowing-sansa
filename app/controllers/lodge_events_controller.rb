@@ -1,6 +1,6 @@
 class LodgeEventsController < ApplicationController
   def index
-
+    @lodge_events = current_lodge.events.page(params[:page])
   end
 
   def show
@@ -29,6 +29,6 @@ class LodgeEventsController < ApplicationController
 
   private
   def current_lodge
-    Lodge.find(params[:lodge_id])
+    @lodge ||= Lodge.find(params[:lodge_id])
   end
 end

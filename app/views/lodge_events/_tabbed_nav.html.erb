@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs">
+  <li <%= active == :index ? 'class=active' : '' %>>
+    <%= link_to 'Listing', lodges_path %>
+  </li>
+  <li <%= active == :new ? 'class=active' : '' %>>
+    <%= link_to 'New', new_lodge_path %>
+  </li>
+  <li <%= active == :show ? 'class=active' : 'class=disabled' %>>
+    <a href="">Details</a>
+  </li>
+  <li <%= active == :export ? 'class=active' : 'class=disabled' %>>
+    <a href="">Export</a>
+  </li>
+  <li <%= active == :import ? 'class=active' : 'class=disabled' %>>
+    <a href="">Import</a>
+  </li>
+</ul>

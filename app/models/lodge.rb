@@ -3,7 +3,7 @@ class Lodge < ActiveRecord::Base
   acts_as_gmappable :process_geocoding => :geocode?, :msg => "Sorry, not even Google could figure out where that is",
                     :address => :address, :callback => :geocoding_callback
 
-  has_many :lodge_events, :dependent => :destroy
+  has_many :events, :foreign_key => 'lodge_id', :class_name => 'LodgeEvent'
 
   validates :name, presence: true, length: {minimum: 4}
   validates :description, presence: true
