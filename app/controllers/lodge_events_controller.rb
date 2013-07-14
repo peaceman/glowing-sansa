@@ -34,7 +34,10 @@ class LodgeEventsController < ApplicationController
   end
 
   def destroy
+    @lodge_event = current_lodge.events.find(params[:id])
+    @lodge_event.destroy
 
+    redirect_to lodge_lodge_events_path(@lodge)
   end
 
   private
