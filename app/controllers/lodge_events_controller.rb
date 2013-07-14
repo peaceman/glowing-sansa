@@ -21,11 +21,16 @@ class LodgeEventsController < ApplicationController
   end
 
   def edit
-
+    @lodge_event = current_lodge.events.find(params[:id])
   end
 
   def update
-
+    @lodge_event = current_lodge.events.find(params[:id])
+    if @lodge_event.save
+      redirect_to lodge_lodge_events_path(@lodge)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
