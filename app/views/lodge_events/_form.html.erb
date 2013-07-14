@@ -1,0 +1,14 @@
+<%= bootstrap_form_for([@lodge, @lodge_event], :html => {:class => 'form-horizontal'}) do |f| %>
+    <fieldset>
+      <legend>General</legend>
+      <%= f.text_field :name %>
+      <%= f.text_area :description %>
+    </fieldset>
+
+    <fieldset>
+      <legend>Schedule</legend>
+      <%= f.select_recurring :recurrence_rule %>
+    </fieldset>
+
+    <%= f.actions %>
+<% end %>

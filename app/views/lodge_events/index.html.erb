@@ -13,18 +13,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
     <% @lodge_events.each do |lodge_event| %>
-    <td><%= link_to lodge_event.id, lodge_event %></td>
-    <td><%= link_to lodge_event.name, lodge_event %></td>
-    <td><%= lodge_event.created_at %></td>
-    <td><%= lodge_event.updated_at %></td>
-    <td>
-      <%= link_to 'Edit', edit_lodge_lodge_event_path(lodge_event), :class => 'btn btn-mini' %>
-      <%= link_to 'Destroy', lodge_event, :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
-    </td>
+    <tr>
+        <td><%= link_to lodge_event.id, [@lodge, lodge_event] %></td>
+        <td><%= link_to lodge_event.name, [@lodge, lodge_event] %></td>
+        <td><%= lodge_event.created_at %></td>
+        <td><%= lodge_event.updated_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, lodge_event), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', [@lodge, lodge_event], :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+        </td>
+    </tr>
     <% end %>
-  </tr>
+
   </tbody>
 </table>
 <%= paginate @lodge_events, :theme => 'twitter-bootstrap', :pagination_class => 'pagination-right' %>

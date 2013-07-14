@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130714162719) do
+ActiveRecord::Schema.define(version: 20130714174737) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130714162719) do
     t.integer  "lodge_id"
     t.string   "name"
     t.string   "description"
-    t.string   "schedule"
+    t.string   "recurrence_rule"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
