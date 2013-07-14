@@ -4,11 +4,11 @@ class LodgeEvent < ActiveRecord::Base
   belongs_to :lodge
   serialize :recurrence_rule, Hash
 
-  validates :name, :description, :lodge_id, :start_time, :recurrence_rule, :presence => true
+  validates :name, :description, :lodge_id, :start_time, :presence => true
 
   def schedule
     s = Schedule.new(start_time)
-    s.add_recurrence_rule RecurringSelect.dirty_hash_to_rule(recurrence_rule)
+    s.add_recurrence_rule RecurringSelect.dirty_hash_to_rule(recurrence_rule) unless recurrence_rule.nil?
 
     s
   end

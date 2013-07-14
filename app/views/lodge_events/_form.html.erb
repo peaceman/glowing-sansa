@@ -11,8 +11,13 @@
         <%= f.text_field :start_time, :data => {format: 'yyyy-MM-dd hh:mm:ss'}, :append => '<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>'.html_safe %>
       </div>
 
+      <div class="control-group required">
+        <label class="control-label" for="lodge_event_recurrence_rule">Recurrence</label>
+        <div class="controls">
+          <%= f.select_recurring :recurrence_rule %>
+        </div>
+      </div>
 
-      <%= f.select_recurring :recurrence_rule %>
     </fieldset>
 
     <%= f.actions %>
