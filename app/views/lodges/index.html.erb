@@ -7,6 +7,7 @@
   <tr>
     <th><%= '#' %></th>
     <th><%= 'Name' %></th>
+    <th><%= 'City' %></th>
     <th><%= 'Published' %></th>
     <th><%= 'Created at' %></th>
     <th><%= 'Updated at' %></th>
@@ -18,6 +19,7 @@
   <tr>
     <td><%= link_to lodge.id, lodge_path(lodge) %></td>
     <td><%= link_to lodge.name, lodge_path(lodge) %></td>
+    <td><%= lodge.city %></td>
     <td><%= lodge.published %></td>
     <td><%= lodge.created_at %></td>
     <td><%= lodge.updated_at %></td>
