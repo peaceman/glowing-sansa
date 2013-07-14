@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require gmaps4rails/base
 //= require gmaps4rails/google
+//= require recurring_select
 //= require_tree .
