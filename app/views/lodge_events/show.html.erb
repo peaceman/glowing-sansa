@@ -11,18 +11,12 @@
   <dd><%= @lodge.created_at %></dd>
   <dt><%= 'Updated at' %></dt>
   <dd><%= @lodge.updated_at %></dd>
-  <dt><%= 'Next occurrences' %></dt>
-  <dd>
-    <ul class="unstyled">
-      <% @lodge_event.schedule.next_occurrences(5).each do |e| %>
-          <li>
-            <%= e %>
-          </li>
-      <% end %>
-    </ul>
-  </dd>
   <dt><%= 'Actions' %></dt>
   <dd>
-    <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, @lodge_event) %>
+    <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, @lodge_event), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', [@lodge, @lodge_event], :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
   </dd>
 </dl>
+<%= calendar @lodge_event.next_events(50) do |event| %>
+ <div><%= event.name %></div>
+<% end %>

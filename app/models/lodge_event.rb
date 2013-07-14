@@ -11,6 +11,12 @@ class LodgeEvent < ActiveRecord::Base
     s
   end
 
+  def next_events(amount)
+    schedule.next_occurrences(amount).map do |o|
+      OpenStruct.new({name: name, start_time: o})
+    end
+  end
+
   def recurrence_rule
     attr = read_attribute(:recurrence_rule)
     return attr unless attr.blank?
