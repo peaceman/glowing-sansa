@@ -26,7 +26,7 @@ class LodgeEventsController < ApplicationController
 
   def update
     @lodge_event = current_lodge.events.find(params[:id])
-    if @lodge_event.save
+    if @lodge_event.update(post_params)
       redirect_to lodge_lodge_events_path(@lodge)
     else
       render 'edit'
@@ -46,6 +46,6 @@ class LodgeEventsController < ApplicationController
   end
 
   def post_params
-    params.require(:lodge_event).permit(:name, :description, :schedule)
+    params.require(:lodge_event).permit(:name, :description, :recurrence_rule)
   end
 end
