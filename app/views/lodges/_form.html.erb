@@ -1,10 +1,22 @@
 <%= bootstrap_form_for(@lodge, :html => {:class => 'form-horizontal', :style => 'position: relative;'}) do |f| %>
     <%= image_tag(@lodge.image.thumb.url, :class => 'img-polaroid', :style => 'position: absolute; right: 0px; top: 0px;') if @lodge.image? %>
 
-    <%= f.text_field :name %>
-    <%= f.text_area :description %>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-    <%= f.check_box String(:published) %>
+    <fieldset>
+      <legend>General</legend>
+      <%= f.text_field :name %>
+      <%= f.text_area :description %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+      <%= f.check_box String(:published) %>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Address</legend>
+      <%= f.text_field :street %>
+      <%= f.text_field :city %>
+      <%= f.text_field :country %>
+    </fieldset>
+
     <%= f.actions %>
 <% end %>
