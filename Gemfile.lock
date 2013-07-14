@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rossta/Google-Maps-for-Rails.git
+  revision: 17cf545aec9f492e73964b6892de8e575722eb54
+  branch: rails_4_support
+  specs:
+    gmaps4rails (2.0.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -137,6 +144,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
+  gmaps4rails!
   jbuilder (~> 1.2)
   jquery-rails
   mini_magick
