@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lodge_id: 
+  name: MyString
+  description: MyString
+  schedule: MyString
+
+two:
+  lodge_id: 
+  name: MyString
+  description: MyString
+  schedule: MyString
