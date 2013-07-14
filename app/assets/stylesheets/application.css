@@ -11,6 +11,7 @@
  *= require_self
  *= require gmaps4rails
  *= require recurring_select
+ *= require bootstrap-datetimepicker
  *= require_tree .
  */
 .calendar td { height: 100px; width: 14.28%; }

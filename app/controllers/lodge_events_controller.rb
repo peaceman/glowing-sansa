@@ -46,6 +46,6 @@ class LodgeEventsController < ApplicationController
   end
 
   def post_params
-    params.require(:lodge_event).permit(:name, :description, :recurrence_rule)
+    params.require(:lodge_event).permit(:name, :description, :start_time, :recurrence_rule)
   end
 end

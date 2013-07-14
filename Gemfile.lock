@@ -43,6 +43,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.10)
     bcrypt-ruby (3.0.1)
+    bootstrap-datetimepicker-rails (0.0.11)
     bootstrap_forms (4.0.0)
     builder (3.1.4)
     carrierwave (0.9.0)
@@ -160,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datetimepicker-rails
   bootstrap-kaminari-views!
   bootstrap_forms
   carrierwave

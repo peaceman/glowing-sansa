@@ -16,4 +16,10 @@
 //= require gmaps4rails/base
 //= require gmaps4rails/google
 //= require recurring_select
+//= require bootstrap-datetimepicker
 //= require_tree .
+
+$(function() {
+    $('#start-time').datetimepicker();
+})
+

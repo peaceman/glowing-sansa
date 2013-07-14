@@ -56,3 +56,4 @@ gem 'bootstrap-kaminari-views', :git => 'https://github.com/matenia/bootstrap-ka
 gem 'ice_cube'
 gem 'recurring_select'
 gem 'simple_calendar'
+gem 'bootstrap-datetimepicker-rails'

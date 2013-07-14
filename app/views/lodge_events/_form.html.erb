@@ -7,6 +7,11 @@
 
     <fieldset>
       <legend>Schedule</legend>
+      <div id="start-time">
+        <%= f.text_field :start_time, :data => {format: 'yyyy-MM-dd hh:mm:ss'}, :append => '<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>'.html_safe %>
+      </div>
+
+
       <%= f.select_recurring :recurrence_rule %>
     </fieldset>
 
