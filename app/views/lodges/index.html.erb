@@ -2,7 +2,7 @@
   <h2>Lodges Listing</h2>
 </div>
 <%= render partial: 'tabbed_nav', locals: {:active => :index} %>
-<table class="table">
+<table class="table table-striped">
   <thead>
   <tr>
     <th><%= '#' %></th>
@@ -31,3 +31,4 @@
   <% end %>
   </tbody>
 </table>
+<%= paginate @lodges, :theme => 'twitter-bootstrap', :pagination_class => 'pagination-right' %>

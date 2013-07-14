@@ -1,6 +1,6 @@
 class LodgesController < ApplicationController
   def index
-    @lodges = Lodge.all
+    @lodges = Lodge.page params[:page]
   end
 
   def create

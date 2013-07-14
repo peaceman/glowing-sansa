@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/matenia/bootstrap-kaminari-views.git
+  revision: 94e78d1c9af3f6e4f4af36f7c9069bf57f6eef7a
+  specs:
+    bootstrap-kaminari-views (0.0.2)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
+
+GIT
   remote: https://github.com/rossta/Google-Maps-for-Rails.git
   revision: 17cf545aec9f492e73964b6892de8e575722eb54
   branch: rails_4_support
@@ -143,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-kaminari-views!
   bootstrap_forms
   carrierwave
   coffee-rails (~> 4.0.0)
