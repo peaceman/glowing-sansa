@@ -9,8 +9,15 @@
   <dd><%= @lodge.description %></dd>
   <dt>Image</dt>
   <dd><%= link_to image_tag(@lodge.image.thumb.url), @lodge.image.url if @lodge.image? %></dd>
+  <dt>Latitude</dt>
+  <dd><%= @lodge.latitude %></dd>
+  <dt>Longitude</dt>
+  <dd><%= @lodge.longitude %></dd>
+  <dt>Address</dt>
+  <dd><%= @lodge.address %></dd>
   <dt><%= 'Created at' %></dt>
   <dd><%= @lodge.created_at %></dd>
   <dt><%= 'Updated at' %></dt>
   <dd><%= @lodge.updated_at %></dd>
 </dl>
+<%= gmaps(:markers => {:data => @lodge.to_gmaps4rails, :options => {:do_clustering => true}}, :map_options => {auto_zoom: false, zoom: 15}) %>

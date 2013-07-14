@@ -26,8 +26,11 @@ class LodgesController < ApplicationController
 
   def update
     @lodge = Lodge.find(params[:id])
-    @lodge.update(post_params)
-    redirect_to @lodge
+    if @lodge.update(post_params)
+      redirect_to @lodge
+    else
+      render 'edit'
+    end
   end
 
   def destroy
