@@ -7,21 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= nav_bar :brand => 'LodgeManager' do %>
+    <% menu_group :pull => :right do %>
+        <%= menu_item 'Settings', edit_admin_registration_path %>
+        <%= menu_item 'Logout', destroy_admin_session_path, :method => :delete %>
+    <% end %>
+<% end %>
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span10">
+    <div class="span12">
       <%= yield %>
-    </div>
-    <div class="span2">
-      <div class="well" style="padding: 8px 0;">
-        <%= render_navigation :expand_all => true %>
-        <!--<ul class="nav nav-list">-->
-          <!--<li class="nav-header">Account</li>-->
-          <!--<li><a href="#">Settings</a></li>-->
-          <!--<li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>-->
-          <!--<li class="divider"></li>-->
-        <!--</ul>-->
-      </div>
     </div>
   </div>
 </div>
