@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130714174737) do
+ActiveRecord::Schema.define(version: 20130714191029) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20130714174737) do
     t.string   "recurrence_rule"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_time"
   end
 
   add_index "lodge_events", ["lodge_id"], name: "index_lodge_events_on_lodge_id"
