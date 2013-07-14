@@ -2,22 +2,35 @@
   <h2>Lodge: <%= @lodge.name %></h2>
 </div>
 <%= render partial: 'tabbed_nav', locals: {:active => :show} %>
-<dl>
-  <dt><%= 'Name' %></dt>
-  <dd><%= @lodge.name %></dd>
-  <dt><%= 'Description' %></dt>
-  <dd><%= @lodge.description %></dd>
-  <dt>Image</dt>
-  <dd><%= link_to image_tag(@lodge.image.thumb.url), @lodge.image.url if @lodge.image? %></dd>
-  <dt>Latitude</dt>
-  <dd><%= @lodge.latitude %></dd>
-  <dt>Longitude</dt>
-  <dd><%= @lodge.longitude %></dd>
-  <dt>Address</dt>
-  <dd><%= @lodge.address %></dd>
-  <dt><%= 'Created at' %></dt>
-  <dd><%= @lodge.created_at %></dd>
-  <dt><%= 'Updated at' %></dt>
-  <dd><%= @lodge.updated_at %></dd>
-</dl>
+<div class="media">
+  <a class="pull-left" href="<%= @lodge.image.url %>">
+    <%= image_tag(@lodge.image.thumb.url, :class => 'thumbnail media-object') if @lodge.image? %>
+    <%= image_tag('http://placehold.it/150x150', :class => 'thumbnail media-object') unless @lodge.image? %>
+  </a>
+  <div class="media-body">
+    <dl class="dl-horizontal">
+      <dt><%= 'Name' %></dt>
+      <dd><%= @lodge.name %></dd>
+      <dt><%= 'Description' %></dt>
+      <dd><%= @lodge.description %></dd>
+      <dt>Latitude</dt>
+      <dd><%= @lodge.latitude %></dd>
+      <dt>Longitude</dt>
+      <dd><%= @lodge.longitude %></dd>
+      <dt>Address</dt>
+      <dd><%= @lodge.address %></dd>
+      <dt><%= 'Created at' %></dt>
+      <dd><%= @lodge.created_at %></dd>
+      <dt><%= 'Updated at' %></dt>
+      <dd><%= @lodge.updated_at %></dd>
+
+      <dt>Actions</dt>
+      <dd>
+        <%= link_to 'Edit', edit_lodge_path(@lodge), :class => 'btn btn-primary' %>
+      </dd>
+
+    </dl>
+  </div>
+</div>
+
 <%= gmaps(:markers => {:data => @lodge.to_gmaps4rails, :options => {:do_clustering => true}}, :map_options => {auto_zoom: false, zoom: 15}) %>
