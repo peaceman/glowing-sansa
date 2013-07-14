@@ -4,6 +4,13 @@ class LodgeEvent < ActiveRecord::Base
   belongs_to :lodge
   serialize :recurrence_rule, Hash
 
+  def schedule
+    s = Schedule.new
+    s.add_recurrence_rule RecurringSelect.dirty_hash_to_rule(recurrence_rule)
+
+    s
+  end
+
   def recurrence_rule
     attr = read_attribute(:recurrence_rule)
     return attr unless attr.blank?

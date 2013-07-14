@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2>Lodge Event: <%= @lodge_event.name %> <small>of Lodge: <%= @lodge.name %></small></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :show} %>
+<dl class="dl-horizontal">
+  <dt><%= 'Name' %></dt>
+  <dd><%= @lodge_event.name %></dd>
+  <dt><%= 'Description' %></dt>
+  <dd><%= @lodge_event.description %></dd>
+  <dt><%= 'Created at' %></dt>
+  <dd><%= @lodge.created_at %></dd>
+  <dt><%= 'Updated at' %></dt>
+  <dd><%= @lodge.updated_at %></dd>
+  <dt><%= 'Next occurrences' %></dt>
+  <dd>
+    <ul class="unstyled">
+      <% @lodge_event.schedule.next_occurrences(5).each do |e| %>
+          <li>
+            <%= e %>
+          </li>
+      <% end %>
+    </ul>
+  </dd>
+  <dt><%= 'Actions' %></dt>
+  <dd>
+    <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, @lodge_event) %>
+  </dd>
+</dl>

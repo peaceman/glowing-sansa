@@ -4,7 +4,7 @@ class LodgeEventsController < ApplicationController
   end
 
   def show
-
+    @lodge_event = current_lodge.events.find(params[:id])
   end
 
   def new
