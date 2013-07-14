@@ -19,6 +19,10 @@
       <dd><%= @lodge.longitude %></dd>
       <dt>Address</dt>
       <dd><%= @lodge.address %></dd>
+      <dt><%= 'Events' %></dt>
+      <dd><%= link_to @lodge.events.count, lodge_lodge_events_path(@lodge) %></dd>
+      <dt><%= 'Published' %></dt>
+      <dd><%= @lodge.published %></dd>
       <dt><%= 'Created at' %></dt>
       <dd><%= @lodge.created_at %></dd>
       <dt><%= 'Updated at' %></dt>
