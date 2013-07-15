@@ -1,6 +1,3 @@
-require 'uberspacify/base'
-require 'uberspacify/mysql'
-
 set :application, "lodgemanager"
 
 set :scm, :git
