@@ -3,6 +3,8 @@
 </div>
 <%= render partial: 'tabbed_nav', locals: {:active => :show} %>
 <dl class="dl-horizontal">
+  <dt><%= 'Category' %></dt>
+  <dd><%= @lodge_event.lodge_event_category.name %></dd>
   <dt><%= 'Name' %></dt>
   <dd><%= @lodge_event.name %></dd>
   <dt><%= 'Description' %></dt>
