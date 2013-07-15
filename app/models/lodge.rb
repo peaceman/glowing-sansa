@@ -5,9 +5,13 @@ class Lodge < ActiveRecord::Base
 
   has_many :events, :foreign_key => 'lodge_id', :class_name => 'LodgeEvent'
 
+  phony_normalize :phone_number, :default_country_code => 'DE'
+  phony_normalized_method :phone_number
+
   validates :name, presence: true, length: {minimum: 4}
   validates :description, presence: true
   validates :street, :street_nr, :city, :country, presence: true
+  validates_plausible_phone :phone_number, :presence => true
 
   def address
     [[self.street, self.street_nr].keep_if {|v| !v.nil?}.join(' '), self.city, self.country].keep_if {|v| !v.nil?}.join ', '

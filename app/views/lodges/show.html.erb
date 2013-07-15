@@ -19,6 +19,8 @@
       <dd><%= @lodge.longitude %></dd>
       <dt>Address</dt>
       <dd><%= @lodge.address %></dd>
+      <dt><%= 'Phone Number' %></dt>
+      <dd><%= @lodge.normalized_phone_number %></dd>
       <dt><%= 'Events' %></dt>
       <dd><%= link_to @lodge.events.count, lodge_lodge_events_path(@lodge) %></dd>
       <dt><%= 'Published' %></dt>
