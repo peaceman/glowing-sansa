@@ -12,6 +12,7 @@ class Lodge < ActiveRecord::Base
   validates :description, presence: true
   validates :street, :street_nr, :city, :country, presence: true
   validates_plausible_phone :phone_number, :presence => true
+  validates_url :site_url
 
   def address
     [[self.street, self.street_nr].keep_if {|v| !v.nil?}.join(' '), self.city, self.country].keep_if {|v| !v.nil?}.join ', '

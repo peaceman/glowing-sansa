@@ -21,6 +21,8 @@
       <dd><%= @lodge.address %></dd>
       <dt><%= 'Phone Number' %></dt>
       <dd><%= @lodge.normalized_phone_number %></dd>
+      <dt><%= 'Site Url' %></dt>
+      <dd><%= link_to @lodge.site_url, @lodge.site_url %></dd>
       <dt><%= 'Events' %></dt>
       <dd><%= link_to @lodge.events.count, lodge_lodge_events_path(@lodge) %></dd>
       <dt><%= 'Published' %></dt>

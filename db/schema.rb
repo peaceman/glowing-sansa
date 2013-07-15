@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130715183056) do
+ActiveRecord::Schema.define(version: 20130715185824) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20130715183056) do
     t.boolean  "gmaps"
     t.string   "street_nr"
     t.string   "phone_number"
+    t.string   "site_url"
   end
 
 end
