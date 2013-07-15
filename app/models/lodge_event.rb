@@ -2,9 +2,10 @@ class LodgeEvent < ActiveRecord::Base
   include IceCube
 
   belongs_to :lodge
+  belongs_to :lodge_event_category
   serialize :recurrence_rule, Hash
 
-  validates :name, :description, :lodge_id, :start_time, :presence => true
+  validates :name, :description, :lodge_id, :lodge_event_category_id, :start_time, :presence => true
 
   def schedule
     s = Schedule.new(start_time)

@@ -1,6 +1,7 @@
 <%= bootstrap_form_for([@lodge, @lodge_event], :html => {:class => 'form-horizontal'}) do |f| %>
     <fieldset>
       <legend>General</legend>
+      <%= f.collection_select :lodge_event_category_id, LodgeEventCategory.all, :id, :name %>
       <%= f.text_field :name %>
       <%= f.text_area :description %>
     </fieldset>
