@@ -9,7 +9,8 @@ class Lodge < ActiveRecord::Base
   phony_normalize :phone_number, :default_country_code => 'DE'
   phony_normalized_method :phone_number
 
-  validates :name, presence: true, length: {minimum: 4}
+  validates :name, presence: true, length: {minimum: 4}, :uniqueness => true
+  validates :registration_number, :presence => true, :uniqueness => true
   validates :description, presence: true
   validates :street, :street_nr, :city, :country, :grand_lodge_id, presence: true
   validates_plausible_phone :phone_number, :presence => true

@@ -7,6 +7,7 @@
   <tr>
     <th><%= '#' %></th>
     <th><%= 'Name' %></th>
+    <th><%= 'Registration Number' %></th>
     <th><%= 'Grand Lodge' %></th>
     <th><%= 'City' %></th>
     <th><%= 'Events' %></th>
@@ -21,6 +22,7 @@
   <tr>
     <td><%= link_to lodge.id, lodge_path(lodge) %></td>
     <td><%= link_to lodge.name, lodge_path(lodge) %></td>
+    <td><%= lodge.registration_number %></td>
     <td><%= link_to lodge.grand_lodge.name, lodge.grand_lodge %></td>
     <td><%= lodge.city %></td>
     <td><%= link_to lodge.events.count, lodge_lodge_events_path(lodge) %></td>
