@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h2>Grand Lodge: <%= @grand_lodge.name %></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :show} %>
+<dl class="dl-horizontal">
+  <dt><%= 'Name' %></dt>
+  <dd><%= @grand_lodge.name %></dd>
+  <dt><%= 'Created at' %></dt>
+  <dd><%= @grand_lodge.created_at %></dd>
+  <dt><%= 'Updated at' %></dt>
+  <dd><%= @grand_lodge.updated_at %></dd>
+  <dt><%= 'Actions' %></dt>
+  <dd>
+    <%= link_to 'Edit', edit_grand_lodge_path(@grand_lodge), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', @grand_lodge, :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+  </dd>
+</dl>
