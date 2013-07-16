@@ -17,13 +17,14 @@ namespace :import do
         result = lodge.update(
             description: lodge_info['description'],
             street: [lodge_info['address'], lodge_info['address2']].join(' '),
-            street_nr: '',
             city: lodge_info['city'],
             country: lodge_info['country'],
             phone_number: lodge_info['phone'],
             site_url: lodge_info['url'],
             grand_lodge_id: 3,
-            registration_number: registration_number
+            registration_number: registration_number,
+            contact_mail: lodge_info['email'],
+            published: true
         )
 
         unless result
