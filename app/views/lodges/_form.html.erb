@@ -4,6 +4,7 @@
     <fieldset>
       <legend>General</legend>
       <%= f.text_field :name %>
+      <%= f.collection_select :grand_lodge_id, GrandLodge.all, :id, :name %>
       <%= f.text_area :description %>
       <%= f.file_field :image %>
       <%= f.hidden_field :image_cache %>

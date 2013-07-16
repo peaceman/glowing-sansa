@@ -41,6 +41,6 @@ class LodgesController < ApplicationController
 
   private
   def post_params
-    params.require(:lodge).permit(:name, :description, :image, :image_cache, :site_url, :published, :street, :street_nr, :city, :country, :phone_number)
+    params.require(:lodge).permit(:name, :grand_lodge_id, :description, :image, :image_cache, :site_url, :published, :street, :street_nr, :city, :country, :phone_number)
   end
 end
