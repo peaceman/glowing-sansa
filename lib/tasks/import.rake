@@ -21,7 +21,7 @@ namespace :import do
             country: lodge_info['country'],
             phone_number: lodge_info['phone'],
             site_url: lodge_info['url'],
-            grand_lodge_id: 3,
+            grand_lodge_id: 1,
             registration_number: registration_number,
             contact_mail: lodge_info['email'],
             published: true
