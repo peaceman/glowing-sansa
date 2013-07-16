@@ -13,7 +13,7 @@ class Lodge < ActiveRecord::Base
   validates :registration_number, :presence => true, :uniqueness => true
   validates :description, presence: true
   validates :street, :street_nr, :city, :country, :grand_lodge_id, presence: true
-  validates_plausible_phone :phone_number, :presence => true
+  validates_plausible_phone :phone_number
   validates_url :site_url
 
   def address
