@@ -4,13 +4,14 @@ class Lodge < ActiveRecord::Base
                     :address => :address, :callback => :geocoding_callback
 
   has_many :events, :foreign_key => 'lodge_id', :class_name => 'LodgeEvent'
+  belongs_to :grand_lodge, :dependent => :destroy
 
   phony_normalize :phone_number, :default_country_code => 'DE'
   phony_normalized_method :phone_number
 
   validates :name, presence: true, length: {minimum: 4}
   validates :description, presence: true
-  validates :street, :street_nr, :city, :country, presence: true
+  validates :street, :street_nr, :city, :country, :grand_lodge_id, presence: true
   validates_plausible_phone :phone_number, :presence => true
   validates_url :site_url
 

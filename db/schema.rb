@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130716182916) do
+ActiveRecord::Schema.define(version: 20130716183000) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -73,6 +73,9 @@ ActiveRecord::Schema.define(version: 20130716182916) do
     t.string   "street_nr"
     t.string   "phone_number"
     t.string   "site_url"
+    t.integer  "grand_lodge_id"
   end
+
+  add_index "lodges", ["grand_lodge_id"], name: "index_lodges_on_grand_lodge_id"
 
 end
