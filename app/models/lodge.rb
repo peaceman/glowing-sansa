@@ -4,7 +4,7 @@ class Lodge < ActiveRecord::Base
                     :address => :address, :callback => :geocoding_callback
 
   has_many :events, :foreign_key => 'lodge_id', :class_name => 'LodgeEvent'
-  belongs_to :grand_lodge, :dependent => :destroy
+  belongs_to :grand_lodge
 
   phony_normalize :phone_number, :default_country_code => 'DE'
   phony_normalized_method :phone_number
