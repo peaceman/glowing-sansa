@@ -8,7 +8,14 @@
 </head>
 <body>
 <%= nav_bar :brand => 'LodgeManager' do %>
-    <% menu_group :pull => :right do %>
+    <% if current_user.is_admin? %>
+    <%= menu_group :pull => :left do %>
+        <%= menu_item 'Lodges', admin_lodges_path %>
+        <%= menu_item 'Grand Lodges', admin_grand_lodges_path %>
+    <% end %>
+    <% end %>
+
+    <%= menu_group :pull => :right do %>
         <%= menu_item 'Settings', edit_user_registration_path %>
         <%= menu_item 'Logout', destroy_user_session_path, :method => :delete %>
     <% end %>
