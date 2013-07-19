@@ -1,8 +1,8 @@
 LodgeManager::Application.routes.draw do
-  devise_for :admins, :skip => [:registrations], :controllers => { :sessions => 'sessions' }
-  as :admin do
-    get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
-    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+  devise_for :users, :skip => [:registrations], :controllers => { :sessions => 'sessions' }
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+    put 'users' => 'devise/registrations#update', :as => 'admin_registration'
   end
 
   resources :grand_lodges

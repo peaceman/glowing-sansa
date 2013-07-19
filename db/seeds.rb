@@ -18,4 +18,4 @@ grand_lodges.each do |gl|
   GrandLodge.find_or_create_by_name(gl)
 end
 
-Admin.create(email: 'foo@lol.com', password: 'CrapLord')
+User.create(email: 'foo@lol.com', password: 'CrapLord')

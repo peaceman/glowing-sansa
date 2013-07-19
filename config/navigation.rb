@@ -51,8 +51,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.dom_class = 'nav nav-list'
     primary.item :account, 'Account', nil, :class => 'nav-header'
-    primary.item :account_settings, 'Settings', edit_admin_registration_path
-    primary.item :logout, 'Logout', destroy_admin_session_path, :method => :delete
+    primary.item :account_settings, 'Settings', edit_user_registration_path
+    primary.item :logout, 'Logout', destroy_user_session_path, :method => :delete
     #primary.item :key_1, 'name', url, options
 
     # Add an item which has a sub navigation (same params, but with block)

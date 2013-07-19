@@ -9,8 +9,8 @@
 <body>
 <%= nav_bar :brand => 'LodgeManager' do %>
     <% menu_group :pull => :right do %>
-        <%= menu_item 'Settings', edit_admin_registration_path %>
-        <%= menu_item 'Logout', destroy_admin_session_path, :method => :delete %>
+        <%= menu_item 'Settings', edit_user_registration_path %>
+        <%= menu_item 'Logout', destroy_user_session_path, :method => :delete %>
     <% end %>
 <% end %>
 <div class="container-fluid">
