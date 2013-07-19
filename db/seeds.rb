@@ -18,4 +18,8 @@ grand_lodges.each do |gl|
   GrandLodge.find_or_create_by_name(gl)
 end
 
-User.create(email: 'foo@lol.com', password: 'CrapLord')
+User.create(email: 'foo@user.com', password: 'CrapLord', :is_admin => false)
+User.create(email: 'foo@admin.com', password: 'CrapLord', :is_admin => true)
+
+LodgeEventCategory.create(:name => 'cat 1')
+LodgeEventCategory.create(:name => 'cat 2')
