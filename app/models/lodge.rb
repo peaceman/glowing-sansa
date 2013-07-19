@@ -5,6 +5,7 @@ class Lodge < ActiveRecord::Base
 
   has_many :events, :foreign_key => 'lodge_id', :class_name => 'LodgeEvent'
   belongs_to :grand_lodge
+  belongs_to :user
 
   phony_normalize :phone_number, :default_country_code => 'DE'
   phony_normalized_method :phone_number
