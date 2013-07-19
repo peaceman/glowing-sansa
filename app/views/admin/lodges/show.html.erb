@@ -30,7 +30,7 @@
       <dt><%= 'Site Url' %></dt>
       <dd><%= value_or_default link_to(@lodge.site_url, @lodge.site_url) %></dd>
       <dt><%= 'Events' %></dt>
-      <dd><%= link_to @lodge.events.count, lodge_lodge_events_path(@lodge) %></dd>
+      <dd><%= link_to @lodge.events.count, admin_lodge_lodge_events_path(@lodge) %></dd>
       <dt><%= 'Published' %></dt>
       <dd><%= @lodge.published %></dd>
       <dt><%= 'Created at' %></dt>
@@ -40,8 +40,8 @@
 
       <dt>Actions</dt>
       <dd>
-        <%= link_to 'Edit', edit_lodge_path(@lodge), :class => 'btn btn-mini' %>
-        <%= link_to 'Delete', @lodge, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+        <%= link_to 'Edit', edit_admin_lodge_path(@lodge), :class => 'btn btn-mini' %>
+        <%= link_to 'Delete', [:admin, @lodge], :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
       </dd>
 
     </dl>

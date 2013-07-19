@@ -15,13 +15,13 @@
   <tbody>
   <% @grand_lodges.each do |grand_lodge| %>
   <tr>
-    <td><%= link_to grand_lodge.id, grand_lodge %></td>
-    <td><%= link_to grand_lodge.name, grand_lodge %></td>
+    <td><%= link_to grand_lodge.id, [:admin, grand_lodge] %></td>
+    <td><%= link_to grand_lodge.name, [:admin, grand_lodge] %></td>
     <td><%= grand_lodge.created_at %></td>
     <td><%= grand_lodge.updated_at %></td>
     <td>
-      <%= link_to 'Edit', edit_grand_lodge_path(grand_lodge), :class => 'btn btn-mini' %>
-      <%= link_to 'Destroy', grand_lodge_path(grand_lodge), :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+      <%= link_to 'Edit', edit_admin_grand_lodge_path(grand_lodge), :class => 'btn btn-mini' %>
+      <%= link_to 'Destroy', admin_grand_lodge_path(grand_lodge), :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
     </td>
   </tr>
   <% end %>

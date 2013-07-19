@@ -17,8 +17,8 @@
   <dd><%= @lodge.updated_at %></dd>
   <dt><%= 'Actions' %></dt>
   <dd>
-    <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, @lodge_event), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete', [@lodge, @lodge_event], :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+    <%= link_to 'Edit', edit_admin_lodge_lodge_event_path(@lodge, @lodge_event), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', [:admin, @lodge, @lodge_event], :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
   </dd>
 </dl>
 <%= calendar @lodge_event.next_events(50) do |event| %>

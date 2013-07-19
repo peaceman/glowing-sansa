@@ -1,5 +1,8 @@
 module ApplicationHelper
   def value_or_default(value, default = '-')
-    value.blank? ? default : value
+    return default if value.blank?
+    return default if value == link_to('', '')
+
+    value
   end
 end

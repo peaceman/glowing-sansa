@@ -11,7 +11,7 @@
   <dd><%= @grand_lodge.updated_at %></dd>
   <dt><%= 'Actions' %></dt>
   <dd>
-    <%= link_to 'Edit', edit_grand_lodge_path(@grand_lodge), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete', @grand_lodge, :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+    <%= link_to 'Edit', edit_admin_grand_lodge_path(@grand_lodge), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', [:admin, @grand_lodge], :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
   </dd>
 </dl>

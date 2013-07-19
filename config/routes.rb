@@ -5,10 +5,15 @@ LodgeManager::Application.routes.draw do
     put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
 
-  resources :grand_lodges
-  resources :lodges do
-    resources :lodge_events
+  namespace :admin do
+    resources :grand_lodges
+    resources :lodges do
+      resources :lodge_events
+    end
+
+    root 'lodges#index'
   end
+
   root 'lodges#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

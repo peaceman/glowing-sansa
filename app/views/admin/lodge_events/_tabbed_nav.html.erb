@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
   <li <%= active == :index ? 'class=active' : '' %>>
-    <%= link_to 'Listing', lodge_lodge_events_path %>
+    <%= link_to 'Listing', admin_lodge_lodge_events_path %>
   </li>
   <li <%= active == :new ? 'class=active' : '' %>>
-    <%= link_to 'New', new_lodge_lodge_event_path %>
+    <%= link_to 'New', new_admin_lodge_lodge_event_path %>
   </li>
   <li <%= active == :show ? 'class=active' : 'class=disabled' %>>
     <a href="">Details</a>

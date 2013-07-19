@@ -24,7 +24,7 @@
             <td><%= lodge_event.created_at %></td>
             <td><%= lodge_event.updated_at %></td>
             <td>
-                <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, lodge_event), :class => 'btn btn-mini' %>
+                <%= link_to 'Edit', edit_admin_lodge_lodge_event_path(@lodge, lodge_event), :class => 'btn btn-mini' %>
                 <%= link_to 'Destroy', [@lodge, lodge_event], :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
             </td>
         </tr>

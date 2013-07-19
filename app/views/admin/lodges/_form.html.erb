@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@lodge, :html => {:class => 'form-horizontal', :style => 'position: relative;'}) do |f| %>
+<%= bootstrap_form_for([:admin, @lodge], :html => {:class => 'form-horizontal', :style => 'position: relative;'}) do |f| %>
     <%= image_tag(@lodge.image.thumb.url, :class => 'img-polaroid', :style => 'position: absolute; right: 0px; top: 0px;') if @lodge.image? %>
 
     <fieldset>

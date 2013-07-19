@@ -1,4 +1,4 @@
-class LodgeEventsController < ApplicationController
+class Admin::LodgeEventsController < AdminController
   def index
     @lodge_events = current_lodge.events.page(params[:page])
   end
@@ -14,7 +14,7 @@ class LodgeEventsController < ApplicationController
   def create
     @lodge_event = current_lodge.events.build(post_params)
     if @lodge_event.save
-      redirect_to lodge_lodge_events_path(@lodge)
+      redirect_to admin_lodge_lodge_events_path(@lodge)
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class LodgeEventsController < ApplicationController
   def update
     @lodge_event = current_lodge.events.find(params[:id])
     if @lodge_event.update(post_params)
-      redirect_to lodge_lodge_events_path(@lodge)
+      redirect_to admin_lodge_lodge_events_path(@lodge)
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class LodgeEventsController < ApplicationController
     @lodge_event = current_lodge.events.find(params[:id])
     @lodge_event.destroy
 
-    redirect_to lodge_lodge_events_path(@lodge)
+    redirect_to admin_lodge_lodge_events_path(@lodge)
   end
 
   private

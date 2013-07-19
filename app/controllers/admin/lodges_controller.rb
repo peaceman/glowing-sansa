@@ -1,4 +1,4 @@
-class LodgesController < ApplicationController
+class Admin::LodgesController < AdminController
   def index
     @lodges = Lodge.page params[:page]
   end
@@ -6,7 +6,7 @@ class LodgesController < ApplicationController
   def create
     @lodge = Lodge.new(post_params)
     if @lodge.save
-      redirect_to @lodge
+      redirect_to [:admin, @lodge]
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class LodgesController < ApplicationController
   def update
     @lodge = Lodge.find(params[:id])
     if @lodge.update(post_params)
-      redirect_to @lodge
+      redirect_to [:admin, @lodge]
     else
       render 'edit'
     end
@@ -36,11 +36,11 @@ class LodgesController < ApplicationController
   def destroy
     @lodge = Lodge.find(params[:id])
     @lodge.destroy
-    redirect_to lodges_path
+    redirect_to admin_lodges_path
   end
 
   private
   def post_params
-    params.require(:lodge).permit(:name, :registration_number, :grand_lodge_id, :description, :image, :image_cache, :site_url, :published, :street, :street_nr, :city, :country, :phone_number)
+    params.require(:lodge).permit(:name, :registration_number, :grand_lodge_id, :description, :image, :image_cache, :site_url, :published, :street, :street_nr, :city, :country, :phone_number, :contact_mail)
   end
 end

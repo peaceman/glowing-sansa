@@ -1,4 +1,4 @@
-class GrandLodgesController < ApplicationController
+class Admin::GrandLodgesController < AdminController
   def index
     @grand_lodges = GrandLodge.page(params[:page])
   end
@@ -14,7 +14,7 @@ class GrandLodgesController < ApplicationController
   def create
     @grand_lodge = GrandLodge.new(post_params)
     if @grand_lodge.save
-      redirect_to @grand_lodge
+      redirect_to [:admin, @grand_lodge]
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class GrandLodgesController < ApplicationController
   def update
     @grand_lodge = GrandLodge.find(params[:id])
     if @grand_lodge.update(post_params)
-      redirect_to grand_lodges_path
+      redirect_to admin_grand_lodges_path
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class GrandLodgesController < ApplicationController
     @grand_lodge = GrandLodge.find(params[:id])
     @grand_lodge.destroy
 
-    redirect_to grand_lodges_path
+    redirect_to admin_grand_lodges_path
   end
 
   private
