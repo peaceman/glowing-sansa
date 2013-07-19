@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h2>User Listing</h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :index} %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= '#' %></th>
+    <th><%= 'E-Mail' %></th>
+    <th><%= 'Created at' %></th>
+    <th><%= 'Updated at' %></th>
+    <th><%= 'Actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= link_to user.email, admin_user_path(user) %></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.updated_at %></td>
+      <td>
+        <%= link_to 'Edit', edit_admin_user_path(user), :class => 'btn btn-mini' %>
+        <%= link_to 'Delete', admin_user_path(user), :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

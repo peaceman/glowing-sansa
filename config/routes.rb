@@ -15,6 +15,8 @@ LodgeManager::Application.routes.draw do
       resources :lodge_events
     end
 
+    resources :users
+
     root 'lodges#index'
   end
 
