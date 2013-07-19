@@ -1,0 +1,51 @@
+<div class="page-header">
+  <h2>Lodge: <%= @lodge.name %></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :show} %>
+<div class="media">
+  <a class="pull-left" href="<%= @lodge.image.url %>">
+    <%= image_tag(@lodge.image.thumb.url, :class => 'thumbnail media-object') if @lodge.image? %>
+    <%= image_tag('http://placehold.it/150x150', :class => 'thumbnail media-object') unless @lodge.image? %>
+  </a>
+  <div class="media-body">
+    <dl class="dl-horizontal">
+      <dt><%= 'Name' %></dt>
+      <dd><%= @lodge.name %></dd>
+      <dt><%= 'Registration Number' %></dt>
+      <dd><%= @lodge.registration_number %></dd>
+      <dt><%= 'Grand Lodge' %></dt>
+      <dd><%= @lodge.grand_lodge.name %></dd>
+      <dt><%= 'Description' %></dt>
+      <dd><%= @lodge.description %></dd>
+      <dt>Latitude</dt>
+      <dd><%= @lodge.latitude %></dd>
+      <dt>Longitude</dt>
+      <dd><%= @lodge.longitude %></dd>
+      <dt>Address</dt>
+      <dd><%= @lodge.address %></dd>
+      <dt><%= 'Phone Number' %></dt>
+      <dd><%= value_or_default @lodge.normalized_phone_number %></dd>
+      <dt><%= 'Contact Mail' %></dt>
+      <dd><%= value_or_default @lodge.contact_mail %></dd>
+      <dt><%= 'Site Url' %></dt>
+      <dd><%= value_or_default link_to(@lodge.site_url, @lodge.site_url) %></dd>
+      <dt><%= 'Events' %></dt>
+      <dd><%= link_to @lodge.events.count, lodge_lodge_events_path(@lodge) %></dd>
+      <dt><%= 'Published' %></dt>
+      <dd><%= @lodge.published %></dd>
+      <dt><%= 'Created at' %></dt>
+      <dd><%= @lodge.created_at %></dd>
+      <dt><%= 'Updated at' %></dt>
+      <dd><%= @lodge.updated_at %></dd>
+
+      <dt>Actions</dt>
+      <dd>
+        <%= link_to 'Edit', edit_lodge_path(@lodge), :class => 'btn btn-mini' %>
+        <%= link_to 'Delete', @lodge, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+      </dd>
+
+    </dl>
+  </div>
+</div>
+
+<%= gmaps(:markers => {:data => @lodge.to_gmaps4rails, :options => {:do_clustering => true}}, :map_options => {auto_zoom: false, zoom: 15}) %>

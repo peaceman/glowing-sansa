@@ -5,6 +5,10 @@ LodgeManager::Application.routes.draw do
     put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
 
+  resources :lodges do
+    resources :lodge_events
+  end
+
   namespace :admin do
     resources :grand_lodges
     resources :lodges do
