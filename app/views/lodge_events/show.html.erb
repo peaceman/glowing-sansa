@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h2>Lodge Event: <%= @lodge_event.name %> <small>of Lodge: <%= link_to @lodge.name, @lodge %></small></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :show} %>
+<dl class="dl-horizontal">
+  <dt><%= 'Category' %></dt>
+  <dd><%= @lodge_event.lodge_event_category.name %></dd>
+  <dt><%= 'Name' %></dt>
+  <dd><%= @lodge_event.name %></dd>
+  <dt><%= 'Description' %></dt>
+  <dd><%= @lodge_event.description %></dd>
+  <dt><%= 'Start time' %></dt>
+  <dd><%= @lodge_event.start_time %></dd>
+  <dt><%= 'Created at' %></dt>
+  <dd><%= @lodge.created_at %></dd>
+  <dt><%= 'Updated at' %></dt>
+  <dd><%= @lodge.updated_at %></dd>
+  <dt><%= 'Actions' %></dt>
+  <dd>
+    <%= link_to 'Edit', edit_lodge_lodge_event_path(@lodge, @lodge_event), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', [@lodge, @lodge_event], :method => 'delete', :data => {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
+  </dd>
+</dl>
+<%= calendar @lodge_event.next_events(50) do |event| %>
+ <div><%= event.name %></div>
+<% end %>

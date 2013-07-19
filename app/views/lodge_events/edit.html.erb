@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h2>Edit Event: <%= @lodge_event.name %> <small>of Lodge: <%= link_to @lodge.name, @lodge %></small></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {active: false} %>
+<%= render partial: 'form' %>

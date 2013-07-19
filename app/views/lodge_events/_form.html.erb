@@ -1,0 +1,25 @@
+<%= bootstrap_form_for([@lodge, @lodge_event], :html => {:class => 'form-horizontal'}) do |f| %>
+    <fieldset>
+      <legend>General</legend>
+      <%= f.collection_select :lodge_event_category_id, LodgeEventCategory.all, :id, :name %>
+      <%= f.text_field :name %>
+      <%= f.text_area :description %>
+    </fieldset>
+
+    <fieldset>
+      <legend>Schedule</legend>
+      <div id="start-time">
+        <%= f.text_field :start_time, :data => {format: 'yyyy-MM-dd hh:mm:ss'}, :append => '<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>'.html_safe %>
+      </div>
+
+      <div class="control-group required">
+        <label class="control-label" for="lodge_event_recurrence_rule">Recurrence</label>
+        <div class="controls">
+          <%= f.select_recurring :recurrence_rule %>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <%= f.actions %>
+<% end %>

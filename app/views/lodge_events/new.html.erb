@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h2>New Event <small>for Lodge: <%= link_to @lodge.name, @lodge %></small></h2>
+</div>
+<%= render partial: 'tabbed_nav', locals: {:active => :new} %>
+<%= render partial: 'form' %>
