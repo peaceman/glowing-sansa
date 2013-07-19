@@ -1,4 +1,6 @@
 class LodgesController < ApplicationController
+  before_filter :redirect_admin_user!
+
   def index
     @lodges = current_user.lodges.page params[:page]
   end
@@ -37,6 +39,10 @@ class LodgesController < ApplicationController
     @lodge = current_user.lodges.find(params[:id])
     @lodge.destroy
     redirect_to lodges_path
+  end
+
+  def redirect_admin_user!
+    redirect_to admin_lodges_path if current_user.is_admin?
   end
 
   private
