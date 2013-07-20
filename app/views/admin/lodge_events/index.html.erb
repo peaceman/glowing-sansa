@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h2>Events Listing <small>of Lodge: <%= link_to @lodge.name, @lodge %></small></h2>
+  <h2>Events Listing <small>of Lodge: <%= link_to @lodge.name, [:admin, @lodge] %></small></h2>
 </div>
 <%= render partial: 'tabbed_nav', locals: {:active => :index} %>
 <table class="table table-striped">
