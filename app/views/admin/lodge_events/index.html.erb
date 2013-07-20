@@ -17,8 +17,8 @@
   <tbody>
     <% @lodge_events.each do |lodge_event| %>
         <tr>
-            <td><%= link_to lodge_event.id, [@lodge, lodge_event] %></td>
-            <td><%= link_to lodge_event.name, [@lodge, lodge_event] %></td>
+            <td><%= link_to lodge_event.id, [:admin, @lodge, lodge_event] %></td>
+            <td><%= link_to lodge_event.name, [:admin, @lodge, lodge_event] %></td>
             <td><%= lodge_event.lodge_event_category.name %></td>
             <td><%= lodge_event.start_time %></td>
             <td><%= lodge_event.created_at %></td>
