@@ -10,7 +10,11 @@ class Admin::LodgesController < AdminController
     end
 
     @lodges = search.results
-    render 'index'
+    if request.xhr?
+      render partial: 'table'
+    else
+      render 'index'
+    end
   end
 
   def create

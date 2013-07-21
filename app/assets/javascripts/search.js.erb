@@ -1,0 +1,8 @@
+<% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+$(function() {
+    $('#search').on('keyup', function() {
+        $.get('<%= search_admin_lodges_path %>?query=' + $(this).val(), function(data) {
+            $('#listing').html(data);
+        });
+    });
+});

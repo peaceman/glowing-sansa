@@ -21,5 +21,4 @@
 
 $(function() {
     $('#start-time').datetimepicker();
-})
-
+});
