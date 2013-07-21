@@ -55,6 +55,22 @@ class Admin::LodgesController < AdminController
 
   private
   def post_params
-    params.require(:lodge).permit(:name, :registration_number, :grand_lodge_id, :description, :image, :image_cache, :site_url, :published, :address, :address_2, :city, :country, :phone_number, :contact_mail)
+    params.require(:lodge).permit(
+        :user_id,
+        :name,
+        :registration_number,
+        :grand_lodge_id,
+        :description,
+        :image,
+        :image_cache,
+        :site_url,
+        :published,
+        :address,
+        :address_2,
+        :city,
+        :country,
+        :phone_number,
+        :contact_mail
+    )
   end
 end

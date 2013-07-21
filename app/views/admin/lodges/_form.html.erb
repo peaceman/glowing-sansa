@@ -3,6 +3,7 @@
 
     <fieldset>
       <legend>General</legend>
+      <%= f.collection_select :user_id, User.non_admins, :id, :email, include_blank: 'None' %>
       <%= f.text_field :name %>
       <%= f.text_field :registration_number %>
       <%= f.collection_select :grand_lodge_id, GrandLodge.all, :id, :name %>

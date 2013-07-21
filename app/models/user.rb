@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :lodges, :dependent => :destroy
+
+  scope :non_admins, -> { where(is_admin: false)}
 end
