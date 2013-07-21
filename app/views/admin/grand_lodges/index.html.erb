@@ -7,6 +7,7 @@
   <tr>
     <th><%= '#' %></th>
     <th><%= 'Name' %></th>
+    <th><%= 'Abbreviation' %></th>
     <th><%= 'Created at' %></th>
     <th><%= 'Updated at' %></th>
     <th><%= 'Actions' %></th>
@@ -17,6 +18,7 @@
   <tr>
     <td><%= link_to grand_lodge.id, [:admin, grand_lodge] %></td>
     <td><%= link_to grand_lodge.name, [:admin, grand_lodge] %></td>
+    <td><%= grand_lodge.abbreviation %></td>
     <td><%= grand_lodge.created_at %></td>
     <td><%= grand_lodge.updated_at %></td>
     <td>
