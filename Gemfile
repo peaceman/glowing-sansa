@@ -44,7 +44,6 @@ gem 'unicorn'
 
 group :development do
   gem 'sqlite3'
-  gem 'sunspot_solr'
   gem 'capistrano'
 end
 
@@ -66,3 +65,4 @@ gem 'url_validator'
 gem 'email_validator'
 gem 'htmlentities'
 gem 'sunspot_rails'
+gem 'sunspot_solr'
