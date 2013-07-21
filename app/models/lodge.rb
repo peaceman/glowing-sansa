@@ -32,6 +32,7 @@ class Lodge < ActiveRecord::Base
 
   searchable do
     text :name, :description, :address, :address_2, :city
+    integer :user_id
     integer :grand_lodge_id
     integer :registration_number
 

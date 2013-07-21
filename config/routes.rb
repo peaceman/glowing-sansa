@@ -7,6 +7,10 @@ LodgeManager::Application.routes.draw do
 
   resources :lodges do
     resources :lodge_events
+
+    collection do
+      get 'search'
+    end
   end
 
   namespace :admin do

@@ -5,6 +5,18 @@ class LodgesController < ApplicationController
     @lodges = current_user.lodges.page params[:page]
   end
 
+  def search
+    search = Lodge.search do
+      fulltext params[:query]
+      with(:user_id, current_user.id)
+
+      paginate :page => params[:page], :per_page => 10
+    end
+
+    @lodges = search.results
+    render 'index'
+  end
+
   def show
     @lodge = current_user.lodges.find(params[:id])
   end
