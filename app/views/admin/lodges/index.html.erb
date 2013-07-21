@@ -25,7 +25,7 @@
     <td><%= lodge.user.nil? ? '-' : lodge.user.email %></td>
     <td><%= link_to lodge.name, admin_lodge_path(lodge) %></td>
     <td><%= lodge.registration_number %></td>
-    <td><%= link_to lodge.grand_lodge.name, [:admin, lodge.grand_lodge]  %></td>
+    <td><%= link_to lodge.grand_lodge.abbreviation, [:admin, lodge.grand_lodge]  %></td>
     <td><%= lodge.city %></td>
     <td><%= link_to lodge.events.count, admin_lodge_lodge_events_path(lodge) %></td>
     <td><%= lodge.published %></td>
