@@ -44,6 +44,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'sqlite3'
+  gem 'sunspot_solr'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -63,3 +64,4 @@ gem 'phony_rails'
 gem 'url_validator'
 gem 'email_validator'
 gem 'htmlentities'
+gem 'sunspot_rails'
