@@ -15,3 +15,4 @@
  *= require_tree .
  */
 .calendar td { height: 100px; width: 14.28%; }
+.nav > form { margin-bottom: 0px; }

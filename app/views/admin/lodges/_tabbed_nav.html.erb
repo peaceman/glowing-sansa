@@ -14,4 +14,8 @@
   <li <%= active == :import ? 'class=active' : 'class=disabled' %>>
     <a href="">Import</a>
   </li>
+  <form class="form-search pull-right" action="<%= search_admin_lodges_path %>">
+    <input class="input-medium search-query" name="query" type="text" value="<%= params[:query] %>"/>
+    <button class="btn">Search</button>
+  </form>
 </ul>
