@@ -2,7 +2,7 @@ class LodgesController < ApplicationController
   before_filter :redirect_admin_user!
 
   def index
-    @lodges = current_user.lodges.page params[:page]
+    @lodges = current_user.lodges.page(params[:page]).per(10)
   end
 
   def search

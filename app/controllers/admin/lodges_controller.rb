@@ -1,6 +1,6 @@
 class Admin::LodgesController < AdminController
   def index
-    @lodges = Lodge.page params[:page]
+    @lodges = Lodge.page(params[:page]).per(10)
   end
 
   def search

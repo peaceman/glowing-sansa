@@ -18,6 +18,8 @@ class Lodge < ActiveRecord::Base
   validates_url :site_url, :allow_nil => true
   validates :contact_mail, email: true, :allow_nil => true
 
+  paginates_per 25
+
   def full_address
     [self.address, self.address_2, self.city, self.country].keep_if {|v| !v.nil? && !v.blank? }.join ', '
   end
