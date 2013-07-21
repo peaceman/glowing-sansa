@@ -13,6 +13,10 @@ LodgeManager::Application.routes.draw do
     resources :grand_lodges
     resources :lodges do
       resources :lodge_events
+
+      collection do
+        get 'search'
+      end
     end
 
     resources :users

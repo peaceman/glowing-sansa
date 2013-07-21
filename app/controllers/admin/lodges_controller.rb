@@ -3,6 +3,16 @@ class Admin::LodgesController < AdminController
     @lodges = Lodge.page params[:page]
   end
 
+  def search
+    search = Lodge.search do
+      fulltext params[:query]
+      paginate :page => params[:page], :per_page => 10
+    end
+
+    @lodges = search.results
+    render 'index'
+  end
+
   def create
     @lodge = Lodge.new(post_params)
     if @lodge.save
