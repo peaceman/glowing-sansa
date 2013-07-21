@@ -45,6 +45,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'sqlite3'
   gem 'sunspot_solr'
+  gem 'capistrano'
 end
 
 gem 'twitter-bootstrap-rails'
