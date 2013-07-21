@@ -42,6 +42,6 @@ class Admin::GrandLodgesController < AdminController
 
   private
   def post_params
-    params.require(:grand_lodge).permit(:name)
+    params.require(:grand_lodge).permit(:name, :abbreviation)
   end
 end
