@@ -29,4 +29,12 @@ class Lodge < ActiveRecord::Base
   def full_address_changed?
     address_changed? || address_2_changed? || city_changed? || country_changed?
   end
+
+  searchable do
+    text :name, :description, :address, :address_2, :city
+    integer :grand_lodge_id
+    integer :registration_number
+
+    latlon(:location) { Sunspot::Util::Coordinates.new(latitude, longitude)}
+  end
 end
