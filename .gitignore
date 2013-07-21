@@ -13,7 +13,9 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log/*.lck
 /tmp
 .idea
 
 /public/uploads
+/solr
