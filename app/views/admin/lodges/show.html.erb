@@ -14,7 +14,7 @@
       <dt><%= 'Registration Number' %></dt>
       <dd><%= @lodge.registration_number %></dd>
       <dt><%= 'Grand Lodge' %></dt>
-      <dd><%= @lodge.grand_lodge.name %></dd>
+      <dd><%= link_to @lodge.grand_lodge.abbreviation, [:admin, @lodge.grand_lodge] %></dd>
       <dt><%= 'Description' %></dt>
       <dd><%= @lodge.description %></dd>
       <dt>Latitude</dt>
