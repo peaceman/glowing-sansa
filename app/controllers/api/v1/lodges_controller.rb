@@ -1,7 +1,7 @@
 class Api::V1::LodgesController < ApiController
   def index
     pages = (Lodge.count / Lodge.default_per_page).ceil
-    current_page = Integer(params[:page]) || 1
+    current_page = Integer(params[:page] || 1)
     current_page = 1 unless current_page > 0
     current_page = pages unless current_page <= pages
 
