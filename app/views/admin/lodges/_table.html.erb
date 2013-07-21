@@ -19,7 +19,7 @@
     <% @lodges.each do |lodge| %>
         <tr>
           <td><%= link_to lodge.id, admin_lodge_path(lodge) %></td>
-          <td><%= lodge.user.nil? ? '-' : lodge.user.email %></td>
+          <td><%= lodge.user.nil? ? '-' : link_to(lodge.user.email, admin_user_path(lodge.user)) %></td>
           <td><%= link_to lodge.name, admin_lodge_path(lodge) %></td>
           <td><%= lodge.registration_number %></td>
           <td><%= link_to lodge.grand_lodge.abbreviation, [:admin, lodge.grand_lodge]  %></td>
