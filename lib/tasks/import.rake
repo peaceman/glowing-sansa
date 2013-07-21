@@ -1,6 +1,8 @@
 namespace :import do
   desc "Import lodges from afuamvd json"
   task :from_afuamvd, [:file] => :environment do |task, args|
+    html = HTMLEntities.new
+
     ::File.open(args.file, 'r') do |f|
       data = ::JSON.load(f)
       data.each do |lodge_info|
@@ -15,8 +17,9 @@ namespace :import do
         end
 
         result = lodge.update(
-            description: lodge_info['description'],
-            street: [lodge_info['address'], lodge_info['address2']].join(' '),
+            description: ActionView::Base.full_sanitizer.sanitize(html.decode(lodge_info['description'])),
+            address: lodge_info['address'],
+            address_2: lodge_info['address2'],
             city: lodge_info['city'],
             country: lodge_info['country'],
             phone_number: lodge_info['phone'],
