@@ -1,4 +1,6 @@
 class Lodge < ActiveRecord::Base
+  default_scope order(:registration_number)
+
   mount_uploader :image, LodgeImageUploader
   acts_as_gmappable :process_geocoding => :geocode?, :msg => "Sorry, not even Google could figure out where that is",
                     :address => :full_address
