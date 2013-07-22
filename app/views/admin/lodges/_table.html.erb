@@ -14,6 +14,19 @@
       <th><%= 'Updated at' %></th>
       <th><%= 'Actions' %></th>
     </tr>
+    <tr>
+      <th><%= f.text_field :id, :class => 'input-block-level' %></th>
+      <th><%= f.text_field :user, :class => 'input-block-level' %></th>
+      <th><%= f.text_field :name, :class => 'input-block-level' %></th>
+      <th><%= f.text_field :registration_number, :class => 'input-block-level' %></th>
+      <th><%= f.collection_select :grand_lodge_id, GrandLodge.all, :id, :abbreviation, {}, {:class => 'input-block-level'} %></th>
+      <th><%= f.text_field :city, :class => 'input-block-level' %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
     </thead>
     <tbody>
     <% @lodges.each do |lodge| %>

@@ -1,6 +1,7 @@
 class Admin::LodgesController < AdminController
   def index
     @lodges = Lodge.page(params[:page]).per(10)
+    @grand_lodges = GrandLodge.all
   end
 
   def search
@@ -9,6 +10,7 @@ class Admin::LodgesController < AdminController
       paginate :page => params[:page], :per_page => 10
     end
 
+    @grand_lodges = GrandLodge.all
     @lodges = search.results
     if request.xhr?
       render partial: 'table'
