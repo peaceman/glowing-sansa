@@ -1,7 +1,7 @@
 <div class="page-header">
   <h2>Lodges Listing</h2>
 </div>
-<%= form_for(:search, url: search_admin_lodges_path) do |f| %>
+<%= form_for(:search, url: search_admin_lodges_path, method: 'GET') do |f| %>
 <%= render partial: 'tabbed_nav', locals: {:active => :index, :f => f} %>
 <%= render partial: 'table', locals: {:f => f} %>
 <% end %>

@@ -5,9 +5,19 @@ class Admin::LodgesController < AdminController
   end
 
   def search
+    search_params = %w{ id user name registration_number grand_lodge_id city }
+
     search = Lodge.search do
-      fulltext params[:query]
       paginate :page => params[:page], :per_page => 10
+
+      search_params.each do |param_name|
+        next unless (params[:search].include?(param_name) and !params[:search][param_name].blank?)
+        case param_name
+          when 'id', 'name', 'registration_number', 'grand_lodge_id', 'city'
+            with(param_name.to_sym, params[:search][param_name])
+        end
+
+      end
     end
 
     @grand_lodges = GrandLodge.all

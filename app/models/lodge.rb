@@ -39,6 +39,9 @@ class Lodge < ActiveRecord::Base
     integer :user_id
     integer :grand_lodge_id
     integer :registration_number
+    string :city
+    string :name
+    integer :id
 
     latlon(:location) { Sunspot::Util::Coordinates.new(latitude, longitude)}
   end
