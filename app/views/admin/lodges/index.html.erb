@@ -2,6 +2,11 @@
   <h2>Lodges Listing</h2>
 </div>
 <%= form_for(:search, url: search_admin_lodges_path, method: 'GET', html: {id: 'search'}) do |f| %>
+<% content_for :search do %>
+    <%= f.text_field :query, :class => 'input-medium search-query' %>
+    <button class="btn">Search</button>
+<% end %>
+
 <%= render partial: 'tabbed_nav', locals: {:active => :index, :f => f} %>
 <%= render partial: 'table', locals: {:f => f} %>
 <% end %>

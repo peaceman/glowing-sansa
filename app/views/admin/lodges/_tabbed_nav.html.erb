@@ -14,8 +14,8 @@
   <li <%= active == :import ? 'class=active' : 'class=disabled' %>>
     <a href="">Import</a>
   </li>
+
   <div class="pull-right">
-    <%= f.text_field :query, :class => 'input-medium search-query' %>
-    <button class="btn">Search</button>
+    <%= yield :search %>
   </div>
 </ul>
