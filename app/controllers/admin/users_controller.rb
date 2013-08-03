@@ -26,7 +26,11 @@ class Admin::UsersController < AdminController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(post_params)
+
+    user_attributes = post_params
+    user_attributes.delete(:password) if user_attributes[:password].blank?
+
+    if @user.update(user_attributes)
       redirect_to admin_user_path(@user)
     else
       render 'edit'
