@@ -1,4 +1,4 @@
-<div id="listing">
+<div>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -16,10 +16,10 @@
     </tr>
     <tr>
       <th><%= f.text_field :id, :class => 'input-block-level' %></th>
-      <th><%= f.text_field :user, :class => 'input-block-level' %></th>
+      <th></th>
       <th><%= f.text_field :name, :class => 'input-block-level' %></th>
       <th><%= f.text_field :registration_number, :class => 'input-block-level' %></th>
-      <th><%= f.collection_select :grand_lodge_id, GrandLodge.all, :id, :abbreviation, {}, {:class => 'input-block-level'} %></th>
+      <th><%= f.collection_select :grand_lodge_id, GrandLodge.all, :id, :abbreviation, {:prompt => 'Please select'}, {:class => 'input-block-level'} %></th>
       <th><%= f.text_field :city, :class => 'input-block-level' %></th>
       <th></th>
       <th></th>
@@ -28,26 +28,11 @@
       <th></th>
     </tr>
     </thead>
-    <tbody>
-    <% @lodges.each do |lodge| %>
-        <tr>
-          <td><%= link_to lodge.id, admin_lodge_path(lodge) %></td>
-          <td><%= lodge.user.nil? ? '-' : link_to(lodge.user.email, admin_user_path(lodge.user)) %></td>
-          <td><%= link_to lodge.name, admin_lodge_path(lodge) %></td>
-          <td><%= lodge.registration_number %></td>
-          <td><%= link_to lodge.grand_lodge.abbreviation, [:admin, lodge.grand_lodge]  %></td>
-          <td><%= lodge.city %></td>
-          <td><%= link_to lodge.events.count, admin_lodge_lodge_events_path(lodge) %></td>
-          <td><%= lodge.published %></td>
-          <td><%= lodge.created_at %></td>
-          <td><%= lodge.updated_at %></td>
-          <td>
-            <%= link_to 'Edit', edit_admin_lodge_path(lodge), :class => 'btn btn-mini' %>
-            <%= link_to 'Destroy', admin_lodge_path(lodge), :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-mini btn-danger' %>
-          </td>
-        </tr>
-    <% end %>
+    <tbody id="listing">
+      <%= render partial: 'tbody' %>
     </tbody>
   </table>
-  <%= paginate @lodges, :theme => 'twitter-bootstrap', :pagination_class => 'pagination-right' %>
+  <div id="pagination">
+    <%= render partial: 'pagination' %>
+  </div>
 </div>

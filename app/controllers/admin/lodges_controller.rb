@@ -5,7 +5,7 @@ class Admin::LodgesController < AdminController
   end
 
   def search
-    search_params = %w{ id user name registration_number grand_lodge_id city }
+    search_params = %w{ id name registration_number grand_lodge_id city query }
 
     search = Lodge.search do
       paginate :page => params[:page], :per_page => 10
@@ -15,6 +15,8 @@ class Admin::LodgesController < AdminController
         case param_name
           when 'id', 'name', 'registration_number', 'grand_lodge_id', 'city'
             with(param_name.to_sym, params[:search][param_name])
+          when 'query'
+            fulltext(params[:search][param_name])
         end
 
       end
@@ -23,7 +25,7 @@ class Admin::LodgesController < AdminController
     @grand_lodges = GrandLodge.all
     @lodges = search.results
     if request.xhr?
-      render partial: 'table'
+      render json: {:tbody => render_to_string(partial: 'tbody'), :pagination => render_to_string(partial: 'pagination')}
     else
       render 'index'
     end
