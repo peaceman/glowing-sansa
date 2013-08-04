@@ -3,6 +3,9 @@ attributes :id, :name, :description, :registration_number, :grand_lodge_id
 node :address do |l|
     {:address => l.address, :address_2 => l.address_2, :city => l.city, :country => l.country}
 end
+node :image do |l|
+    "#{request.protocol + request.host_with_port}#{l.image.thumb.url}" unless l.image.blank?
+end
 
 node :contact do |l|
     {:phone => l.phone_number, :mail => l.contact_mail}

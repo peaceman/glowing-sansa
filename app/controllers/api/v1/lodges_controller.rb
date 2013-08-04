@@ -12,7 +12,6 @@ class Api::V1::LodgesController < ApiController
         :prev => current_page - 1 < 1 ? nil : "#{api_v1_lodges_url}?page=#{current_page - 1}"
     }
 
-
     response.headers['Link'] = page_links.keep_if {|k, v| !v.nil?}.map {|k, v| "<#{v}>; rel=\"#{k}\""}.join(', ')
     @lodges = Lodge.page current_page
   end
